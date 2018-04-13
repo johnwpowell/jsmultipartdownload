@@ -3,11 +3,9 @@
 
     let app = angular.module("jsmultipartdownload", []);
 
-    //app.config(["$locationProvider", "$httpProvider", function ($routeProvider, $locationProvider, $httpProvider) {
-    //    $locationProvider.html5Mode(false);
-    //}]);
-
-    //app.run(["$http", function ($http) {
-    //}]);
+    app.config(["$compileProvider", function ($compileProvider) {
+        // have to add blob or angular will mark the link as unsafe
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension|blob):/);
+    }]);
 
 })();

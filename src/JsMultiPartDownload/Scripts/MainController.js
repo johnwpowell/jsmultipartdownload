@@ -7,20 +7,20 @@
 
         $scope.download = function (multiple) {
 
-            var downloadPromise = multiple ? downloadService.download() : downloadService.downloadSingle();
+            $scope.downloadedFiles = [];
 
-            downloadPromise.then(function (files) {
+            (multiple ? downloadService.download() : downloadService.downloadSingle())
+                .then(function (files) {
 
-                // option 1, prompt the user to save
+                // option 1, prompt to save
                 for (var i = 0; i < files.length; i++) {
-                    var file = files[i];
-                    saveAs(file.blob, file.filename);
+                    let file = files[i];
+                    $window.saveAs(file.blob, file.filename);
                 }
 
-                // option 2, links for user to click
-                $scope.downloadedFiles = [];
+                // option 2, blob links
                 for (var i = 0; i < files.length; i++) {
-                    var file = files[i];
+                    let file = files[i];
 
                     $scope.downloadedFiles.push({
                         filename: file.filename,

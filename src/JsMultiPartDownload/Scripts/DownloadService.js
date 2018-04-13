@@ -6,6 +6,7 @@
         let download = function () {
             return $http(
                 {
+                    method: "GET",
                     url: "api/download",
                     responseType: "arraybuffer"
                 })
@@ -18,6 +19,7 @@
         let downloadSingle = function () {
             return $http(
                 {
+                    method: "GET",
                     url: "api/download/1",
                     responseType: "arraybuffer"
                 })

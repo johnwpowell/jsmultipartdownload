@@ -1,4 +1,4 @@
- # AngularJS Download Multiple Files from multipart/mixed Response from WebAPI
+# AngularJS Download Multiple Files from a Single multipart/mixed Response from WebAPI
 
 This repository contains an example of how to use AngularJS to make a WebAPI request that returns a single multipart/mixed response  enabling the user to download multiple files.  The user can either be prompted by the native download or you can provide a custom experience with a blob URL.
 

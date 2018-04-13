@@ -2,6 +2,7 @@
 <html>
 <head>
     <script src="https://code.angularjs.org/1.4.1/angular.js"></script>
+    <script src="https://cdn.rawgit.com/inexorabletash/polyfill/v0.1.42/polyfill.min.js"></script>
     <script src="Scripts/FileSaver.js"></script>
     <script src="Scripts/App.js"></script>
     <script src="Scripts/MainController.js"></script>
@@ -10,7 +11,7 @@
 <body ng-app="jsmultipartdownload" ng-strict-di>
     <h1>JS MultiPart Download</h1>
     <div ng-controller="MainController">
-        <button ng-click="download(true)">Download Multipe Files!</button>
+        <button ng-click="download(true)">Download Multiple Files</button>
         <button ng-click="download(false)">Download One File</button>
         <h1>Downloaded files (blob link option)</h1>
         <div ng-repeat="file in downloadedFiles">
